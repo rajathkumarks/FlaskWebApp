@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CRUD Application</title>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+
+	{% block body%}
+
+	<div class="container">
+		<div class="well text-center">
+			
+			<h1>Flask CRUD Application</h1>
+
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col md-12">
+					<h2>Student List <button type="button" class="btn btn-success float-right" data-toggle = "modal" data-target="#addData">Add Student Data</button></h2>
+
+					<!-- Modal for Adding Data-->
+					<div class="modal fade" id="addData" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-sm">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="modalLabel">Please Enter Data</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        <form action="" method="POST">
+					            <div class="form-group">
+					              <label>Name:</label>
+					              <input type="text" name="name" class="form-control" required="1">
+					            </div>
+					            <div class="form-group">
+					              <label>Email:</label>
+					              <input type="text" name="email" class="form-control" required="1">
+					            </div>
+					            <div class="form-group">
+					              <label>Phone:</label>
+					              <input type="text" name="phone" class="form-control" required="1">
+					            </div>
+					            <div class="form-group">
+					              <button class="btn btn-primary" type="submit">Insert Data</button>
+					            </div>
+					        </form>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<table class="table table-stripped">
+						<tr>
+							<th>Serial</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Action</th>
+						</tr>
+						<tr>
+							<td>01</td>
+							<td>Bob</td>
+							<td>bob@email.com</td>
+							<td>9123456789</td>
+							<td>
+
+								<a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#mymodal-edit">Edit</a>
+								<a href="" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure to Delete ?')">Delete</a>
+						</tr>
+					</table>
+
+					<!-- Modal for Editing Data-->
+					<div class="modal fade" id="mymodal-edit" tabindex="-1" role="dialog" aria-labelledby="modalLabeledit" aria-hidden="true">
+					  <div class="modal-dialog modal-sm">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="modalLabeledit">Please Update Data</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        <form action="" method="POST">
+					            <div class="form-group">
+					              <label>Name:</label>
+					              <input type="text" name="name" class="form-control" value="Bob">
+					            </div>
+					            <div class="form-group">
+					              <label>Email:</label>
+					              <input type="text" name="email" class="form-control" value="bob@email.com">
+					            </div>
+					            <div class="form-group">
+					              <label>Phone:</label>
+					              <input type="text" name="phone" class="form-control" value="9123456789">
+					            </div>
+					            <div class="form-group">
+					              <button class="btn btn-primary" type="submit">Update Data</button>
+					            </div>
+					        </form>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="well">
+			
+			<h5>www.intell-eyes.com <a href="https://falsk.intell-eyes.com" class="float-right">Visit Website</a></h5>
+
+		</div>
+
+	</div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/JavaScript" src="{{url_for('static',filename = 'js/jquery-3.3.1.slim.min.js')}}"></script>
+    <script type="text/JavaScript" src="{{url_for('static',filename = 'js/popper.min.js')}}"></script>
+    <script type="text/JavaScript" src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+
+    {% endblock %}
+
+
+</body>
+</html>
