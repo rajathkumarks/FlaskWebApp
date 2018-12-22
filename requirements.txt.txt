@@ -1,0 +1,17 @@
+flask-login
+Flask-SQLAlchemy
+Flask-Mail
+Flask-Limiter
+Flask-WTF
+WTForms-Components
+redis
+alembic
+psycopg2
+flake8
+pytest
+pytest-cov
+flask-debugtoolbar
+gunicorn
+Flask-Cache
+Flask-Caching
+flask-marshmallow
